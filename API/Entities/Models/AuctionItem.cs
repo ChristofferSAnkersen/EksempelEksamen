@@ -9,6 +9,9 @@ namespace API.Entities.Models
     public class AuctionItem
     {
         [Key]
+        public int Id { get; set; }
+
+
         public int ItemNumber { get; set; }
 
         public string ItemDescription { get; set; }
