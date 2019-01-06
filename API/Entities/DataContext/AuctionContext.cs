@@ -14,9 +14,9 @@ namespace API.Entities.DataContext
 
         }
 
-        DbSet<AuctionItem> AuctionItems { get; set; }
+        public DbSet<AuctionItem> AuctionItems { get; set; }
 
-        DbSet<Bid> Bids { get; set; }
+        public DbSet<Bid> Bids { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
