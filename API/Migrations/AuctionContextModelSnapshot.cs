@@ -21,7 +21,7 @@ namespace API.Migrations
 
             modelBuilder.Entity("API.Entities.Models.AuctionItem", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("ItemNumber")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -35,28 +35,28 @@ namespace API.Migrations
 
                     b.Property<string>("ItemDescription");
 
-                    b.Property<int>("ItemNumber");
-
                     b.Property<int>("RatingPrice");
 
-                    b.HasKey("Id");
+                    b.HasKey("ItemNumber");
 
                     b.ToTable("AuctionItems");
                 });
 
             modelBuilder.Entity("API.Entities.Models.Bid", b =>
                 {
-                    b.Property<int>("ItemNumber")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("CustomName");
 
+                    b.Property<int>("ItemNumber");
+
                     b.Property<string>("Phone");
 
                     b.Property<int>("Price");
 
-                    b.HasKey("ItemNumber");
+                    b.HasKey("Id");
 
                     b.ToTable("Bids");
                 });

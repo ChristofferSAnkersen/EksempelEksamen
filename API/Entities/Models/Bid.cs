@@ -9,6 +9,8 @@ namespace API.Entities.Models
     public class Bid
     {
         [Key]
+        public int Id { get; set; }
+
         public int ItemNumber { get; set; }
 
         public int Price { get; set; }

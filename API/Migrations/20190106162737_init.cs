@@ -12,9 +12,8 @@ namespace API.Migrations
                 name: "AuctionItems",
                 columns: table => new
                 {
-                    Id = table.Column<int>(nullable: false)
+                    ItemNumber = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    ItemNumber = table.Column<int>(nullable: false),
                     ItemDescription = table.Column<string>(nullable: true),
                     RatingPrice = table.Column<int>(nullable: false),
                     BidPrice = table.Column<int>(nullable: false),
@@ -24,22 +23,23 @@ namespace API.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_AuctionItems", x => x.Id);
+                    table.PrimaryKey("PK_AuctionItems", x => x.ItemNumber);
                 });
 
             migrationBuilder.CreateTable(
                 name: "Bids",
                 columns: table => new
                 {
-                    ItemNumber = table.Column<int>(nullable: false)
+                    Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    ItemNumber = table.Column<int>(nullable: false),
                     Price = table.Column<int>(nullable: false),
                     CustomName = table.Column<string>(nullable: true),
                     Phone = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Bids", x => x.ItemNumber);
+                    table.PrimaryKey("PK_Bids", x => x.Id);
                 });
         }
 
